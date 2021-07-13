@@ -11,12 +11,20 @@ import java.util.List;
 public class StudentDTO {
     @NotBlank
     @Length(min = 8, max = 50)
-    @Pattern(regexp = "([a-z]|[A-Z]|( ))*")
+    @Pattern(regexp = "[a-zA-Z ]*")
     private String name;
 
     @NotNull
     @Valid
     List<SubjectDTO> subjects;
+
+    public StudentDTO(String name, List<SubjectDTO> subjects) {
+        this.name = name;
+        this.subjects = subjects;
+    }
+
+    public StudentDTO() {
+    }
 
     public String getName() {
         return name;

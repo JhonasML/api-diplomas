@@ -8,7 +8,7 @@ public class SubjectDTO {
 
     @NotNull
     @Length(min = 8, max =50)
-    @Pattern(regexp = "([a-z]|[A-Z]|( ))*")
+    @Pattern(regexp = "[a-zA-Z ]*")
     private String name;
 
     @DecimalMin("0.0")
